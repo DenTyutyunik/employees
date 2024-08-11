@@ -25,8 +25,16 @@ public class Employee {
         return department;
     }
 
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
     public double getSalary() {
         return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     public void setFirstName(String firstName) {
@@ -39,14 +47,6 @@ public class Employee {
 
     public void setPatronymicName(String patronymicName) {
         this.patronymicName = patronymicName;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
     }
 
     public boolean isEquals(Employee obj) {

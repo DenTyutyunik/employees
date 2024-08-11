@@ -21,12 +21,10 @@ public class EmployeeManagement {
         String methodAnswer = "";
         if (employees.isEmpty()) {
             methodAnswer = "Нет сотрудников";
-            //return "Нет сотрудников";
         } else {
             for (int i = 0; i < employees.size(); i++) {
                 methodAnswer += String.format("Employee id = [%s], name = [%s], department = [%s], salary = [%s]\n", i, employees.get(i).getFullName(), employees.get(i).getDepartment(), employees.get(i).getSalary());
             }
-            //return "";
         }
         return methodAnswer;
     }
@@ -100,7 +98,7 @@ public class EmployeeManagement {
         }
     }
 
-    //
+    // Salary indexation
     public String salaryIndexation(double indexationPercent) {
         if (employees.isEmpty()) {
             return "Нет сотрудников";
@@ -112,7 +110,7 @@ public class EmployeeManagement {
         }
     }
 
-    //
+    // Salary per department
     public double getSalaryPerDepartment(String department) {
         if (employees.isEmpty()) {
             return 0;
@@ -147,10 +145,8 @@ public class EmployeeManagement {
         if (employees.isEmpty()) {
             methodAnswer = "Нет сотрудников";
         } else {
-            //double minSalaryEmployee = employees.getFirst().getSalary();
             for (int i = 0; i < employees.size(); i++) {
                 if (employees.get(i).getSalary() <= salaryLimit) {
-                    //minSalaryEmployee = employees.get(i).getSalary();
                     methodAnswer += String.format("ID = [%s], Full Name = [%s], salary = [%s]\n", i, employees.get(i).getFullName(), employees.get(i).getSalary());
                 }
             }

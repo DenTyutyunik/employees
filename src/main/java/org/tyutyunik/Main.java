@@ -26,10 +26,10 @@ public class Main {
         System.out.printf("Общая зарплата: %s\n", EmployeeControl.salaryTotal());
 
         // Employee with minimal salary
-        System.out.printf("Сотрудник(и) с минимальной зарплатой: %s\n", EmployeeControl.salaryMinOfEmployees());
+        System.out.printf("Сотрудник с минимальной зарплатой: %s\n", EmployeeControl.salaryMinOfEmployees());
 
         // Employee with maximum salary
-        System.out.printf("Сотрудник(и) с максимальной зарплатой: %s\n", EmployeeControl.salaryMaxOfEmployees());
+        System.out.printf("Сотрудник с максимальной зарплатой: %s\n", EmployeeControl.salaryMaxOfEmployees());
 
         // Average salary
         System.out.printf("Средняя зарплата: %s\n", EmployeeControl.salaryAverage());
@@ -53,15 +53,15 @@ public class Main {
         System.out.printf("Зарплата на отдел 5: %s\n", EmployeeControl.getSalaryPerDepartment("5"));
 
         // Salary indexation per department 1
-        EmployeeControl.salaryIndexationPerDepartment(3,"1");
+        EmployeeControl.salaryIndexationPerDepartment(3, "1");
         // Salary indexation per department 2
-        EmployeeControl.salaryIndexationPerDepartment(7,"2");
+        EmployeeControl.salaryIndexationPerDepartment(7, "2");
         // Salary indexation per department 3
-        EmployeeControl.salaryIndexationPerDepartment(11,"3");
+        EmployeeControl.salaryIndexationPerDepartment(11, "3");
         // Salary indexation per department 4
-        EmployeeControl.salaryIndexationPerDepartment(5,"4");
+        EmployeeControl.salaryIndexationPerDepartment(5, "4");
         // Salary indexation per department 5
-        EmployeeControl.salaryIndexationPerDepartment(2,"5");
+        EmployeeControl.salaryIndexationPerDepartment(2, "5");
 
         System.out.printf("Список всех сотрудников с полной информацией после индексации:\n%s\n", EmployeeControl.getListOfEmployeesWithFullInfo());
 
