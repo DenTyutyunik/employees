@@ -5,10 +5,23 @@ import java.util.List;
 
 public class EmployeeManagement {
     private List<Employee> employees = new ArrayList<>();
+    private int employeesCounter;
 
     // Add employee
     public void addEmployee(Employee employee) {
+        employeesCounter += 1;
+        employee.setID(employeesCounter);
         employees.add(employee);
+    }
+
+    // Remove employee
+    public void removeEmployee(int ID) {
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getID() == ID) {
+                employees.remove(i);
+                break;
+            }
+        }
     }
 
     // Count of employees
@@ -18,28 +31,28 @@ public class EmployeeManagement {
 
     // List of all employees with full information
     public String getListOfEmployeesWithFullInfo() {
-        String methodAnswer = "";
         if (employees.isEmpty()) {
-            methodAnswer = "Нет сотрудников";
+            return "Нет сотрудников";
         } else {
+            String methodAnswer = "";
             for (int i = 0; i < employees.size(); i++) {
-                methodAnswer += String.format("Employee id = [%s], name = [%s], department = [%s], salary = [%s]\n", i, employees.get(i).getFullName(), employees.get(i).getDepartment(), employees.get(i).getSalary());
+                methodAnswer += String.format("Employee id = [%s], name = [%s], department = [%s], salary = [%s]\n", employees.get(i).getID(), employees.get(i).getFullName(), employees.get(i).getDepartment(), employees.get(i).getSalary());
             }
+            return methodAnswer;
         }
-        return methodAnswer;
     }
 
     // List of all employees with only names
     public String getListOfEmployeesWithOnlyNames() {
-        String methodAnswer = "";
         if (employees.isEmpty()) {
-            methodAnswer = "Нет сотрудников";
+            return "Нет сотрудников";
         } else {
+            String methodAnswer = "";
             for (int i = 0; i < employees.size(); i++) {
                 methodAnswer += String.format("[%s]\n", employees.get(i).getFullName());
             }
+            return methodAnswer;
         }
-        return methodAnswer;
     }
 
     // Total salary
@@ -57,10 +70,10 @@ public class EmployeeManagement {
 
     // Employee with minimal salary
     public String salaryMinOfEmployees() {
-        String methodAnswer = "";
         if (employees.isEmpty()) {
-            methodAnswer = "Нет сотрудников";
+            return "Нет сотрудников";
         } else {
+            String methodAnswer = "";
             double minSalaryEmployee = employees.getFirst().getSalary();
             for (int i = 0; i < employees.size(); i++) {
                 if (employees.get(i).getSalary() < minSalaryEmployee) {
@@ -68,16 +81,16 @@ public class EmployeeManagement {
                     methodAnswer += String.format("[%s]", employees.get(i).getFullName());
                 }
             }
+            return methodAnswer;
         }
-        return methodAnswer;
     }
 
     // Employee with maximum salary
     public String salaryMaxOfEmployees() {
-        String methodAnswer = "";
         if (employees.isEmpty()) {
-            methodAnswer = "Нет сотрудников";
+            return "Нет сотрудников";
         } else {
+            String methodAnswer = "";
             double minSalaryEmployee = employees.getFirst().getSalary();
             for (int i = 0; i < employees.size(); i++) {
                 if (employees.get(i).getSalary() > minSalaryEmployee) {
@@ -85,8 +98,8 @@ public class EmployeeManagement {
                     methodAnswer += String.format("[%s]", employees.get(i).getFullName());
                 }
             }
+            return methodAnswer;
         }
-        return methodAnswer;
     }
 
     // Average salary
@@ -141,33 +154,31 @@ public class EmployeeManagement {
 
     // Employee with minimal salary
     public String salaryBelow(double salaryLimit) {
-        String methodAnswer = "";
         if (employees.isEmpty()) {
-            methodAnswer = "Нет сотрудников";
+            return "Нет сотрудников";
         } else {
+            String methodAnswer = "";
             for (int i = 0; i < employees.size(); i++) {
                 if (employees.get(i).getSalary() <= salaryLimit) {
-                    methodAnswer += String.format("ID = [%s], Full Name = [%s], salary = [%s]\n", i, employees.get(i).getFullName(), employees.get(i).getSalary());
+                    methodAnswer += String.format("ID = [%s], Full Name = [%s], salary = [%s]\n", employees.get(i).getID(), employees.get(i).getFullName(), employees.get(i).getSalary());
                 }
             }
+            return methodAnswer;
         }
-        return methodAnswer;
     }
 
     // Employee with minimal salary
     public String salaryAbove(double salaryLimit) {
-        String methodAnswer = "";
         if (employees.isEmpty()) {
-            methodAnswer = "Нет сотрудников";
+            return "Нет сотрудников";
         } else {
-            //double minSalaryEmployee = employees.getFirst().getSalary();
+            String methodAnswer = "";
             for (int i = 0; i < employees.size(); i++) {
                 if (employees.get(i).getSalary() >= salaryLimit) {
-                    //minSalaryEmployee = employees.get(i).getSalary();
-                    methodAnswer += String.format("ID = [%s], Full Name = [%s], salary = [%s]\n", i, employees.get(i).getFullName(), employees.get(i).getSalary());
+                    methodAnswer += String.format("ID = [%s], Full Name = [%s], salary = [%s]\n", employees.get(i).getID(), employees.get(i).getFullName(), employees.get(i).getSalary());
                 }
             }
+            return methodAnswer;
         }
-        return methodAnswer;
     }
 }

@@ -3,6 +3,7 @@ package org.tyutyunik;
 import java.util.Objects;
 
 public class Employee {
+    private int ID;
     private String firstName;
     private String lastName;
     private String patronymicName;
@@ -15,6 +16,14 @@ public class Employee {
         this.patronymicName = patronymicName;
         this.department = department;
         this.salary = salary;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getFullName() {

@@ -70,5 +70,13 @@ public class Main {
 
         // Every employee who gets salary below limit
         System.out.printf("Список сотрудников, кто получает зарплату выше лимита:\n%s\n", EmployeeControl.salaryAbove(140000));
+
+        // Remove employees
+        System.out.printf("Список всех сотрудников с полной информацией:\n%s\n", EmployeeControl.getListOfEmployeesWithFullInfo());
+        EmployeeControl.removeEmployee(0);
+        EmployeeControl.removeEmployee(4);
+        EmployeeControl.removeEmployee(8);
+        EmployeeControl.removeEmployee(9);
+        System.out.printf("Список всех сотрудников с полной информацией после удаления:\n%s\n", EmployeeControl.getListOfEmployeesWithFullInfo());
     }
 }
