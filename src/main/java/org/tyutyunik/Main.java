@@ -2,7 +2,8 @@ package org.tyutyunik;
 
 public class Main {
     public static void main(String[] args) {
-        EmployeeManagement EmployeeControl = new EmployeeManagement();
+        // Init array capacity. May be need, may be not need
+        EmployeeManagement EmployeeControl = new EmployeeManagement(1);
 
         // Add employees
         EmployeeControl.addEmployee(new Employee("Цвітан", "Глібовицький", "Леонідович", "1", 100_000.0));
